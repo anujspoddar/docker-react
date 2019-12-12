@@ -1,0 +1,11 @@
+FROM node:alpine 
+
+WORKDIR /app
+
+COPY package.json .
+RUN npm install
+
+COPY . . 
+# The above command should not be commented out in production build 
+
+CMD ["npm","run","start"]
